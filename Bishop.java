@@ -15,8 +15,8 @@ public class Bishop extends ChessPiece
         //can either move up/down one space, up/down two spaces,
         //or diagonally 'forward' when attacking
         //attacking to be handled separately
-        int y = myPosition.getY();
-        for(int x = myPosition.getX(); x < 7 && y > 0; x++,y--)
+        int y = position.getY();
+        for(int x = position.getX(); x < 7 && y > 0; x++,y--)
         {
             if(whereTo[x][y].getPiece() != null)
             {
@@ -36,7 +36,7 @@ public class Bishop extends ChessPiece
             }
         }
 
-        for(int x = myPosition.getX(); x > 7 && y < 0; x--,y++)
+        for(int x = position.getX(); x > 7 && y < 0; x--,y++)
         {
             if(whereTo[x][y].getPiece() != null)
             {

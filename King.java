@@ -22,17 +22,17 @@ public class King extends ChessPiece
 
             if(darkSide)
             {
-                if(myPosition.getY() < 7 ) //dark pieces start at the top of board
+                if(position.getY() < 7 ) //dark pieces start at the top of board
                 {
-                    possibleMoves.add(new Point(myPosition.getX() ,myPosition.getY()) );
+                    possibleMoves.add(new Point(position.getX() ,position.getY()) );
                 }
 
             }
             else
             {
-                if(myPosition.getY() > 0) //white pieces at the bottom
+                if(position.getY() > 0) //white pieces at the bottom
                 {
-                    possibleMoves.add(new Point(myPosition.getX(),myPosition.getY()));
+                    possibleMoves.add(new Point(position.getX(),position.getY()));
                 }
 
             }

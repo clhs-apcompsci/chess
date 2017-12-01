@@ -16,43 +16,43 @@ public class Rook extends ChessPiece
         //or diagonally 'forward' when attacking
         //attacking to be handled separately
 
-        for(int x = myPosition.getX(); x < 7; x++)
+        for(int x = position.getX(); x < 7; x++)
         {
-            if(whereTo[x][myPosition.getY()].getPiece() != null)
+            if(whereTo[x][position.getY()].getPiece() != null)
             {
-                if(whereTo[x][myPosition.getY()].getPiece().darkSide)
+                if(whereTo[x][position.getY()].getPiece().darkSide)
                 {
                     break;
                 }
                 else
                 {
-                    possibleMoves.add(new Point(x,myPosition.getY()));
+                    possibleMoves.add(new Point(x,position.getY()));
                     break;
                 }
             }
             else
             {
-                possibleMoves.add(new Point(x,myPosition.getY()));
+                possibleMoves.add(new Point(x,position.getY()));
             }
         }
 
-        for(int y = myPosition.getY(); y > 0; y--)
+        for(int y = position.getY(); y > 0; y--)
         {
-            if(whereTo[myPosition.getX()][y].getPiece() != null)
+            if(whereTo[position.getX()][y].getPiece() != null)
             {
-                if(whereTo[(myPosition.getX())][y].getPiece().darkSide)
+                if(whereTo[(position.getX())][y].getPiece().darkSide)
                 {
                     break;
                 }
                 else
                 {
-                    possibleMoves.add(new Point(myPosition.getX(),y));
+                    possibleMoves.add(new Point(position.getX(),y));
                     break;
                 }
             }
             else
             {
-                possibleMoves.add(new Point(myPosition.getX(),y));
+                possibleMoves.add(new Point(position.getX(),y));
             }
         }
         

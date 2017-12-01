@@ -16,48 +16,48 @@ public class Queen extends ChessPiece
         //can either move up/down one space, up/down two spaces,
         //or diagonally 'forward' when attacking
         //attacking to be handled separately
-        for(int x = myPosition.getX(); x < 7; x--)
+        for(int x = position.getX(); x < 7; x--)
         {
-            if(whereTo[myPosition.getX()-1][myPosition.getY()].getPiece() != null)
+            if(whereTo[position.getX()-1][position.getY()].getPiece() != null)
             {
-                if(whereTo[(myPosition.getX()-1)][myPosition.getY()].getPiece().darkSide)
+                if(whereTo[(position.getX()-1)][position.getY()].getPiece().darkSide)
                 {
                     break;
                 }
                 else
                 {
-                    possibleMoves.add(new Point(myPosition.getX()-1,myPosition.getY()));
+                    possibleMoves.add(new Point(position.getX()-1,position.getY()));
                     break;
                 }
             }
             else
             {
-                possibleMoves.add(new Point(myPosition.getX()-1,myPosition.getY()));
+                possibleMoves.add(new Point(position.getX()-1,position.getY()));
             }
         }
 
-        for(int y = myPosition.getY(); y > 0; y--)
+        for(int y = position.getY(); y > 0; y--)
         {
-            if(whereTo[myPosition.getX()][myPosition.getY()-1].getPiece() != null)
+            if(whereTo[position.getX()][position.getY()-1].getPiece() != null)
             {
-                if(whereTo[(myPosition.getX())][myPosition.getY()-1].getPiece().darkSide)
+                if(whereTo[(position.getX())][position.getY()-1].getPiece().darkSide)
                 {
                     break;
                 }
                 else
                 {
-                    possibleMoves.add(new Point(myPosition.getX(),myPosition.getY()-1));
+                    possibleMoves.add(new Point(position.getX(),position.getY()-1));
                     break;
                 }
             }
             else
             {
-                possibleMoves.add(new Point(myPosition.getX(),myPosition.getY()));
+                possibleMoves.add(new Point(position.getX(),position.getY()));
             }
         }
 
-        int y = myPosition.getY();
-        for(int x = myPosition.getX(); x < 7 && y > 0; x++,y--)
+        int y = position.getY();
+        for(int x = position.getX(); x < 7 && y > 0; x++,y--)
         {
             if(whereTo[x][y].getPiece() != null)
             {
@@ -77,7 +77,7 @@ public class Queen extends ChessPiece
             }
         }
 
-        for(int x = myPosition.getX(); x > 7 && y < 0; x--,y++)
+        for(int x = position.getX(); x > 7 && y < 0; x--,y++)
         {
             if(whereTo[x][y].getPiece() != null)
             {
