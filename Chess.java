@@ -66,7 +66,7 @@ public class Chess extends JFrame implements ActionListener, WindowListener
         setLocationRelativeTo( null );
         //setResizable( false );
         setTitle( "Chess" );
-        setIconImage( new ImageIcon( "chess/icon.png" ).getImage() );
+        setIconImage( new ImageIcon( "images/icon.png" ).getImage() );
         setVisible( true );
     }
     
