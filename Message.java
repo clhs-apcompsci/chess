@@ -52,6 +52,56 @@ public class Message
             }
     }
     
+    public int getInteger( String name )
+    {
+        return ( int ) ( getVar( "int", name ) );
+    }
+    
+    public double getDouble( String name )
+    {
+        return ( double ) ( getVar( "double", name ) );
+    }
+    
+    public float getFloat( String name )
+    {
+        return ( int ) ( getVar( "float", name ) );
+    }
+    
+    public long getLong( String name )
+    {
+        return ( long ) ( getVar( "long", name ) );
+    }
+    
+    public char getCharacter( String name )
+    {
+        return ( char ) ( getVar( "char", name ) );
+    }
+    
+    public String getString( String name )
+    {
+        return ( String ) ( getVar( "String", name ) );
+    }
+    
+    public boolean getBoolean( String name )
+    {
+        return ( boolean ) ( getVar( "boolean", name ) );
+    }
+    
+    public Object getVar( String name )
+    {
+        for( int i = 0; i < vars.size(); i++ )
+            if( vars.get( i ).split( " " )[1].equals( name ) )
+                return data.get( vars.get( i ) );
+        return null;
+    }
+    
+    private Object getVar( String type, String name )
+    {
+        if( vars.contains( name ) )
+            return data.get( name );
+        return null;
+    }
+    
     public String toString()
     {
         removeVar( "timestamp" );
