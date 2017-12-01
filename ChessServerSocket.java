@@ -6,6 +6,12 @@ public class ChessServerSocket extends Thread
 {
     ServerSocket Chess1;
     Socket Chess;
+    
+    public static void main( String[] args )
+    {
+        new ChessServerSocket();
+    }
+    
     public ChessServerSocket()
     {
         start();

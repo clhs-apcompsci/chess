@@ -4,6 +4,12 @@ import java.io.*;
 public class ChessSocket extends Thread
 {
     Socket Chess;
+    
+    public static void main( String[] args )
+    {
+        new ChessSocket();
+    }
+    
     public ChessSocket()
     {
         start();
